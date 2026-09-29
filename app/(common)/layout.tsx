@@ -1,4 +1,5 @@
 import NavBar from "@/components/shared/NavBar/NavBar";
+import Footer from "@/components/shared/Footer/Footer";
 import { ReactNode } from "react";
 
 const layout = ({ children }: { children: ReactNode }) => {
@@ -7,6 +8,8 @@ const layout = ({ children }: { children: ReactNode }) => {
       {/* 1. Header / Navigation */}
       <NavBar className="relative z-50" />
       <div className="w-full flex-1">{children}</div>
+      {/* 2. Global Footer */}
+      <Footer />
     </div>
   );
 };
