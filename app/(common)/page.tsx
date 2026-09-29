@@ -4,6 +4,7 @@ import CoursesSection from "@/components/pages/home/Courses/CoursesSection";
 import LearningPathsSection from "@/components/pages/home/LearningPaths/LearningPathsSection";
 import FeaturesSection from "@/components/pages/home/Features/FeaturesSection";
 import Banner from "@/components/pages/home/Banner/Banner";
+import DiscoverSection from "@/components/pages/home/Discover/DiscoverSection";
 
 const HomePage = () => {
   return (
@@ -25,6 +26,9 @@ const HomePage = () => {
 
       {/* Section 6: Creator Banner (Unlock Your Potential as a Creator) */}
       <Banner />
+
+      {/* Section 7: Testimonials (Discover What Our Community Is Saying) */}
+      <DiscoverSection />
     </main>
   );
 };
