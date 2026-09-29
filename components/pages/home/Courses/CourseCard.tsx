@@ -19,6 +19,9 @@ export interface Course {
   avatars?: string[];
   enrolledStudentsCount?: string;
   href?: string;
+  lessonsCount?: string;
+  duration?: string;
+  commentsCount?: string;
 }
 
 export interface CourseCardProps {

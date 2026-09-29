@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ShoppingBag } from "lucide-react";
 import cart from "@/assets/icons/Style=Outlined.svg"
@@ -12,13 +13,14 @@ interface NavBarProps {
 }
 
 const navLinks = [
-  { name: "Home", href: "/", active: true },
-  { name: "Courses", href: "#courses", active: false },
-  { name: "Creators", href: "#creators", active: false },
+  { name: "Home", href: "/" },
+  { name: "Courses", href: "/courses" },
+  { name: "Creators", href: "/#creators" },
 ];
 
 export const NavBar: React.FC<NavBarProps> = ({ className = "" }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <header className={`w-full relative z-50 ${className}`}>
@@ -49,19 +51,26 @@ export const NavBar: React.FC<NavBarProps> = ({ className = "" }) => {
           className="hidden md:flex items-center gap-8 lg:gap-10"
           aria-label="Main Navigation"
         >
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className={`text-sm lg:text-[15px] transition-colors duration-200 relative py-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#d4fb20] rounded ${
-                link.active
-                  ? "text-white font-medium"
-                  : "text-white/75 hover:text-white font-normal"
-              }`}
-            >
-              {link.name}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const isActive =
+              link.href === "/"
+                ? pathname === "/"
+                : pathname?.startsWith(link.href);
+
+            return (
+              <Link
+                key={link.name}
+                href={link.href}
+                className={`text-sm lg:text-[15px] transition-colors duration-200 relative py-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#d4fb20] rounded ${
+                  isActive
+                    ? "text-white font-medium"
+                    : "text-white/75 hover:text-white font-normal"
+                }`}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
         </nav>
 
         {/* Right Desktop Actions */}
@@ -146,20 +155,27 @@ export const NavBar: React.FC<NavBarProps> = ({ className = "" }) => {
             className="md:hidden absolute top-full left-0 w-full bg-[#003be2]/95 backdrop-blur-xl border-b border-white/15 px-6 py-6 shadow-2xl flex flex-col gap-4 z-50"
           >
             <nav className="flex flex-col gap-3.5">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={`text-base py-1 transition-colors ${
-                    link.active
-                      ? "text-white font-semibold"
-                      : "text-white/80 hover:text-white"
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              ))}
+              {navLinks.map((link) => {
+                const isActive =
+                  link.href === "/"
+                    ? pathname === "/"
+                    : pathname?.startsWith(link.href);
+
+                return (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`text-base py-1 transition-colors ${
+                      isActive
+                        ? "text-white font-semibold"
+                        : "text-white/80 hover:text-white"
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                );
+              })}
             </nav>
 
             <div className="h-px w-full bg-white/15 my-1" />
