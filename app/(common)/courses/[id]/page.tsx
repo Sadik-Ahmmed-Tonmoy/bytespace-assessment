@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Share2,
@@ -757,12 +758,12 @@ export default function CourseDetailsPage() {
                   Ready to Dive In? Enroll Now and Start Building Your Digital Future!
                 </p>
 
-                <button
-                  type="button"
-                  className="w-full sm:w-auto px-5 py-2 rounded-full border border-gray-300 text-gray-800 text-xs sm:text-sm font-satoshi font-medium hover:bg-gray-50 transition-colors cursor-pointer"
+                <Link
+                  href="/creators"
+                  className="inline-block w-full sm:w-auto text-center px-5 py-2 rounded-full border border-gray-300 text-gray-800 text-xs sm:text-sm font-satoshi font-medium hover:bg-gray-50 transition-colors cursor-pointer"
                 >
                   See Full Profile
-                </button>
+                </Link>
               </div>
             </motion.div>
           </div>

@@ -15,7 +15,7 @@ interface NavBarProps {
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "Courses", href: "/courses" },
-  { name: "Creators", href: "/#creators" },
+  { name: "Creators", href: "/creators" },
 ];
 
 export const NavBar: React.FC<NavBarProps> = ({ className = "" }) => {
