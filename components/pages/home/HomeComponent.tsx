@@ -6,6 +6,7 @@ import PartnersSection from "./Partners/PartnersSection";
 import CoursesSection from "./Courses/CoursesSection";
 import LearningPathsSection from "./LearningPaths/LearningPathsSection";
 import FeaturesSection from "./Features/FeaturesSection";
+import Banner from "./Banner/Banner";
 
 const HomeComponent = () => {
   return (

@@ -3,6 +3,7 @@ import PartnersSection from "@/components/pages/home/Partners/PartnersSection";
 import CoursesSection from "@/components/pages/home/Courses/CoursesSection";
 import LearningPathsSection from "@/components/pages/home/LearningPaths/LearningPathsSection";
 import FeaturesSection from "@/components/pages/home/Features/FeaturesSection";
+import Banner from "@/components/pages/home/Banner/Banner";
 
 const HomePage = () => {
   return (
@@ -21,6 +22,9 @@ const HomePage = () => {
 
       {/* Section 5: Professional Growth & Course Management */}
       <FeaturesSection />
+
+      {/* Section 6: Creator Banner (Unlock Your Potential as a Creator) */}
+      <Banner />
     </main>
   );
 };
