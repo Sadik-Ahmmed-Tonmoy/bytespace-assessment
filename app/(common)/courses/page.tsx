@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import {
   Search,
@@ -120,6 +121,7 @@ const allCourses: Course[] = [
 ];
 
 export default function CoursesPage() {
+  const router = useRouter();
   const [selectedCategory, setSelectedCategory] = useState("Featured");
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
@@ -257,6 +259,7 @@ export default function CoursesPage() {
                 course={course}
                 index={idx}
                 priority={idx < 3}
+                onClick={() => router.push("/courses/build-digital-asset")}
               />
             ))}
           </div>
