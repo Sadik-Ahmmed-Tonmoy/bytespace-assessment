@@ -393,10 +393,10 @@ export default function RegisterPage() {
             className="w-full max-w-[480px] lg:max-w-[500px] bg-white rounded-[32px] sm:rounded-[36px] p-7 sm:p-10 lg:p-12 shadow-[0_24px_64px_rgba(0,0,0,0.22)]"
           >
             {/* Header */}
-            <span className="font-satoshi font-semibold text-sm sm:text-base text-[#003be2] block">
+            <span className="font-satoshi font-medium text-sm sm:text-base text-[#003be2] block">
               Create an Account
             </span>
-            <h2 className="font-poppins font-bold text-3xl sm:text-4xl lg:text-[40px] leading-[1.15] text-gray-950 mt-1 mb-7 sm:mb-9 tracking-tight">
+            <h2 className="font-poppins font-semibold text-3xl sm:text-4xl lg:text-[44px] leading-[1.2] tracking-[-0.01em] text-gray-950 mt-1.5 mb-7 sm:mb-9">
               Welcome to<br />ByteSpace
             </h2>
 
