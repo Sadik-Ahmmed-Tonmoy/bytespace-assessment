@@ -31,7 +31,7 @@ export const Banner: React.FC = () => {
           scale: { duration: 0.6 },
           y: { repeat: Infinity, duration: 4, ease: "easeInOut" },
         }}
-        className="absolute -top-3 sm:-top-6 -left-4 sm:-left-2 md:left-0 w-28 sm:w-36 md:w-44 lg:w-52 pointer-events-none z-10"
+        className="absolute -top-3 sm:top-0 -left-4 sm:-left-2 md:left-0 w-28 sm:w-36 md:w-44 lg:w-56 pointer-events-none z-10"
       >
         <Image
           src="/assets/images/unlock/lime-coil-left.png"
@@ -54,7 +54,7 @@ export const Banner: React.FC = () => {
           y: { repeat: Infinity, duration: 4.5, ease: "easeInOut" },
           rotate: { repeat: Infinity, duration: 5, ease: "easeInOut" },
         }}
-        className="absolute top-3 sm:top-6 left-[14%] sm:left-[17%] md:left-[19%] w-12 sm:w-16 md:w-20 lg:w-24 pointer-events-none z-10"
+        className="absolute top-3 sm:top-6 left-[14%] sm:left-[17%] md:left-[19%] w-12 sm:w-16 md:w-20 lg:w-44 pointer-events-none z-10"
       >
         <Image
           src="/assets/images/unlock/white-coil.png"
@@ -76,7 +76,7 @@ export const Banner: React.FC = () => {
           scale: { duration: 0.6 },
           y: { repeat: Infinity, duration: 4.2, ease: "easeInOut" },
         }}
-        className="absolute -bottom-4 sm:-bottom-6 -left-3 sm:-left-2 md:left-0 w-20 sm:w-28 md:w-36 lg:w-40 pointer-events-none z-10"
+        className="absolute -bottom-4 sm:bottom-15 -left-3 sm:-left-2 md:left-0 w-20 sm:w-28 md:w-36 lg:w-40 pointer-events-none z-10"
       >
         <Image
           src="/assets/images/unlock/white-cone.png"
@@ -98,7 +98,7 @@ export const Banner: React.FC = () => {
           scale: { duration: 0.6 },
           y: { repeat: Infinity, duration: 4.8, ease: "easeInOut" },
         }}
-        className="absolute -bottom-10 sm:-bottom-14 md:-bottom-16 left-[5%] sm:left-[7%] md:left-[9%] w-32 sm:w-44 md:w-56 lg:w-64 pointer-events-none z-10"
+        className="absolute -bottom-10 sm:-bottom-14 md:bottom-0 left-[5%] sm:left-[7%] md:left-[9%] w-32 sm:w-44 md:w-56 lg:w-64 pointer-events-none z-10"
       >
         <Image
           src="/assets/images/unlock/lime-donut.png"
@@ -121,7 +121,7 @@ export const Banner: React.FC = () => {
           y: { repeat: Infinity, duration: 4.3, ease: "easeInOut" },
           rotate: { repeat: Infinity, duration: 5, ease: "easeInOut" },
         }}
-        className="absolute top-4 sm:top-8 right-[15%] sm:right-[18%] md:right-[20%] w-14 sm:w-18 md:w-24 lg:w-28 pointer-events-none z-10"
+        className="absolute top-4 sm:top-8 right-[15%] sm:right-[18%]  w-14 sm:w-18 md:w-24 lg:w-44 pointer-events-none z-10"
       >
         <Image
           src="/assets/images/unlock/lime-pyramid.png"
@@ -143,7 +143,7 @@ export const Banner: React.FC = () => {
           scale: { duration: 0.6 },
           y: { repeat: Infinity, duration: 4.6, ease: "easeInOut" },
         }}
-        className="absolute -top-4 sm:-top-8 -right-4 sm:-right-2 md:right-0 w-36 sm:w-48 md:w-60 lg:w-72 pointer-events-none z-10"
+        className="absolute -top-4 -right-4 sm:-right-2 md:right-0 w-36 sm:w-48 md:w-60 lg:w-56 pointer-events-none z-10"
       >
         <Image
           src="/assets/images/unlock/white-slab.png"

@@ -21,7 +21,7 @@ const partnerLogos = [
 
 export const PartnersSection: React.FC = () => {
   return (
-    <section className="relative z-20 w-full bg-[#f5f5f6] py-8 sm:py-10 md:py-12 lg:py-14 border-y border-gray-200/40 select-none">
+    <section className="relative z-20 w-full bg-[#f5f5f6] py-8 sm:py-10 md:py-14 lg:py-20 border-y border-gray-200/40 select-none">
       <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-12">
         {/* Desktop: single row justify-between | Mobile/Tablet: balanced responsive wrap */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:flex md:items-center md:justify-between items-center justify-items-center gap-6 sm:gap-8 md:gap-6 lg:gap-10">

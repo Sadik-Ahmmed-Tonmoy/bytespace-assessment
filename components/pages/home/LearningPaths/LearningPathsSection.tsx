@@ -39,7 +39,7 @@ export const learningPathsData: LearningPath[] = [
 
 export const LearningPathsSection: React.FC = () => {
   return (
-    <section className="relative z-20 w-full bg-white py-14 sm:py-18 md:py-20 select-none">
+    <section className="relative z-20 w-full bg-white pb-14 sm:pb-18 md:pb-20 select-none">
       <div className="max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-4xl mx-auto">
