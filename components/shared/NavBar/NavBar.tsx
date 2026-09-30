@@ -41,7 +41,16 @@ export const NavBar: React.FC<NavBarProps> = ({ className = "" }) => {
               className="object-contain"
             />
           </div>
-          <span className="text-xl sm:text-2xl font-bold tracking-tight text-white select-none">
+          <span
+            className="font-clash font-bold text-[24px] leading-none tracking-normal text-white select-none"
+            style={{
+              fontFamily: "var(--font-clash-display), 'Clash Display', sans-serif",
+              fontWeight: 700,
+              fontSize: "24px",
+              lineHeight: "100%",
+              letterSpacing: "0%",
+            }}
+          >
             ByteSpace
           </span>
         </Link>
@@ -61,11 +70,18 @@ export const NavBar: React.FC<NavBarProps> = ({ className = "" }) => {
               <Link
                 key={link.name}
                 href={link.href}
-                className={`text-sm lg:text-[15px] transition-colors duration-200 relative py-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#d4fb20] rounded ${
+                className={`font-satoshi text-[16px] tracking-[0%] transition-colors duration-200 relative py-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#d4fb20] rounded ${
                   isActive
-                    ? "text-white font-medium"
-                    : "text-white/75 hover:text-white font-normal"
+                    ? "text-white font-medium leading-[120%]"
+                    : "text-white/75 hover:text-white font-normal leading-[160%]"
                 }`}
+                style={{
+                  fontFamily: "Satoshi, sans-serif",
+                  fontWeight: isActive ? 500 : 400,
+                  fontSize: "16px",
+                  lineHeight: isActive ? "120%" : "160%",
+                  letterSpacing: "0%",
+                }}
               >
                 {link.name}
               </Link>
@@ -77,14 +93,28 @@ export const NavBar: React.FC<NavBarProps> = ({ className = "" }) => {
         <div className="hidden md:flex items-center gap-6 lg:gap-8">
           <Link
             href="/auth/login"
-            className="text-sm lg:text-[15px] text-white/90 hover:text-white font-normal transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#d4fb20] rounded"
+            className="font-satoshi text-[16px] font-normal leading-[24px] tracking-[0%] text-white/90 hover:text-white transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#d4fb20] rounded"
+            style={{
+              fontFamily: "Satoshi, sans-serif",
+              fontWeight: 400,
+              fontSize: "16px",
+              lineHeight: "24px",
+              letterSpacing: "0%",
+            }}
           >
             Sign In
           </Link>
 
           <Link
             href="/auth/register"
-            className="text-sm lg:text-[15px] text-white/90 hover:text-white font-normal transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#d4fb20] rounded"
+            className="font-satoshi text-[16px] font-normal leading-[24px] tracking-[0%] text-white/90 hover:text-white transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#d4fb20] rounded"
+            style={{
+              fontFamily: "Satoshi, sans-serif",
+              fontWeight: 400,
+              fontSize: "16px",
+              lineHeight: "24px",
+              letterSpacing: "0%",
+            }}
           >
             Join Us
           </Link>
@@ -166,11 +196,18 @@ export const NavBar: React.FC<NavBarProps> = ({ className = "" }) => {
                     key={link.name}
                     href={link.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className={`text-base py-1 transition-colors ${
+                    className={`font-satoshi text-[16px] tracking-[0%] py-1 transition-colors ${
                       isActive
-                        ? "text-white font-semibold"
-                        : "text-white/80 hover:text-white"
+                        ? "text-white font-medium leading-[120%]"
+                        : "text-white/80 hover:text-white font-normal leading-[160%]"
                     }`}
+                    style={{
+                      fontFamily: "Satoshi, sans-serif",
+                      fontWeight: isActive ? 500 : 400,
+                      fontSize: "16px",
+                      lineHeight: isActive ? "120%" : "160%",
+                      letterSpacing: "0%",
+                    }}
                   >
                     {link.name}
                   </Link>
@@ -184,14 +221,28 @@ export const NavBar: React.FC<NavBarProps> = ({ className = "" }) => {
               <Link
                 href="/auth/login"
                 onClick={() => setMobileMenuOpen(false)}
-                className="flex-1 text-center py-2.5 rounded-full border border-white/30 text-white font-medium text-sm hover:bg-white/10 transition-colors"
+                className="flex-1 text-center py-2.5 rounded-full border border-white/30 text-white font-satoshi text-[16px] font-normal leading-[24px] tracking-[0%] hover:bg-white/10 transition-colors"
+                style={{
+                  fontFamily: "Satoshi, sans-serif",
+                  fontWeight: 400,
+                  fontSize: "16px",
+                  lineHeight: "24px",
+                  letterSpacing: "0%",
+                }}
               >
                 Sign In
               </Link>
               <Link
                 href="/auth/register"
                 onClick={() => setMobileMenuOpen(false)}
-                className="flex-1 text-center py-2.5 rounded-full bg-[#d4fb20] text-gray-950 font-semibold text-sm hover:brightness-105 transition-all shadow-md"
+                className="flex-1 text-center py-2.5 rounded-full bg-[#d4fb20] text-gray-950 font-satoshi text-[16px] font-normal leading-[24px] tracking-[0%] hover:brightness-105 transition-all shadow-md"
+                style={{
+                  fontFamily: "Satoshi, sans-serif",
+                  fontWeight: 400,
+                  fontSize: "16px",
+                  lineHeight: "24px",
+                  letterSpacing: "0%",
+                }}
               >
                 Join Us
               </Link>

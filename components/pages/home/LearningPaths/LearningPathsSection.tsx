@@ -49,7 +49,15 @@ export const LearningPathsSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="font-poppins font-semibold text-2xl sm:text-3xl md:text-[36px] leading-[1.2] tracking-[-0.01em] text-center text-gray-950"
+            className="font-poppins font-semibold text-2xl sm:text-3xl md:text-[36px] leading-[120%] tracking-[-0.01em] text-center text-gray-950"
+            style={{
+              fontFamily: "var(--font-poppins), 'Poppins', sans-serif",
+              fontWeight: 600,
+              fontSize: "36px",
+              lineHeight: "120%",
+              letterSpacing: "-1%",
+              textAlign: "center",
+            }}
           >
             Explore Diverse Learning Paths at Bytespace
           </motion.h2>
@@ -60,7 +68,15 @@ export const LearningPathsSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="font-satoshi font-normal text-sm sm:text-base md:text-[18px] leading-[1.6] tracking-normal text-center text-gray-500 max-w-[890px] mx-auto mt-3.5 sm:mt-4"
+            className="font-satoshi font-normal text-sm sm:text-base md:text-[18px] leading-[160%] tracking-[0%] text-center text-gray-500 max-w-[890px] mx-auto mt-3.5 sm:mt-4"
+            style={{
+              fontFamily: "Satoshi, sans-serif",
+              fontWeight: 400,
+              fontSize: "18px",
+              lineHeight: "160%",
+              letterSpacing: "0%",
+              textAlign: "center",
+            }}
           >
             At Bytespace, we believe in empowering individuals through knowledge.
             Our diverse range of courses spans various fields, ensuring

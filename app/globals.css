@@ -112,12 +112,31 @@
   font-style: normal;
 }
 
+/* Clash Display Font Faces */
+@font-face {
+  font-family: 'Clash Display';
+  src: url('/assets/fonts/ClashDisplay-Bold.woff2') format('woff2'),
+       url('https://cdn.fontshare.com/wf/BFBSY7LX5W2U2EROCLVVTQP4VS7S4PC3/IIUX4FGTMD2LK2VWD3RVTAS4SSMUN7B5/53RZKGODFYDW3QHTIL7IPOWTBCSUEZK7.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Clash Display';
+  src: url('/assets/fonts/ClashDisplay-Regular.woff2') format('woff2'),
+       url('https://cdn.fontshare.com/wf/VFMK2COV3DN37JR7JQ4CAOJPZ7KWKNY7/ODD5YJNDLHZZB2MIT3DPVH4EIHAMZ34D/BSY64LPTT3OPLVKAZKL3AHKRWZ3D74AC.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
 /* 4. Tailwind Theme Mapping */
 @theme {
   /* Brand Colors & Fonts */
   --font-sans: var(--font-plus-jakarta-sans), system-ui, -apple-system, sans-serif;
   --font-poppins: var(--font-poppins), 'Poppins', sans-serif;
   --font-satoshi: 'Satoshi', sans-serif;
+  --font-clash: var(--font-clash-display), 'Clash Display', sans-serif;
   --color-brand-blue: #003be2;
   --color-brand-lime: #d4fb20;
   --color-primary: #007C74;

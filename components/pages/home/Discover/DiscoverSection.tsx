@@ -38,8 +38,8 @@ export const DiscoverSection: React.FC = () => {
       style={{
         backgroundColor: "#FFFFFF",
         backgroundImage: `
-          radial-gradient(ellipse 65% 55% at 55% 10%, rgba(212, 251, 32, 0.42) 0%, rgba(220, 254, 70, 0.16) 50%, transparent 75%),
-          radial-gradient(ellipse 45% 65% at 100% 32%, rgba(212, 251, 32, 0.28) 0%, transparent 70%),
+          radial-gradient(ellipse 20% 30% at 55% 20%, rgba(212, 251, 32, 0.42) 0%, rgba(220, 254, 70, 0.16) 50%, transparent 75%),
+          radial-gradient(ellipse 35% 25% at 100% 32%, rgba(212, 251, 32, 0.28) 0%, transparent 70%),
           radial-gradient(ellipse 55% 55% at 3% 95%, rgba(191, 219, 254, 0.65) 0%, rgba(219, 234, 254, 0.25) 50%, transparent 75%)
         `,
       }}

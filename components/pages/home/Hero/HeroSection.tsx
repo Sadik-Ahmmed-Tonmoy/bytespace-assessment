@@ -35,7 +35,13 @@ export const HeroSection: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="text-white text-[28px] sm:text-[42px] md:text-[52px] lg:text-[60px] xl:text-[64px] font-bold sm:font-extrabold tracking-[-0.03em] leading-[1.1] sm:leading-[1.08]"
+            className="font-poppins font-semibold text-center text-white text-[32px] sm:text-[48px] md:text-[58px] lg:text-[66px] xl:text-[72px] leading-[120%] tracking-[-0.01em]"
+            style={{
+              fontFamily: "var(--font-poppins), 'Poppins', sans-serif",
+              fontWeight: 600,
+              lineHeight: "120%",
+              letterSpacing: "-1%",
+            }}
           >
             Get Access to Hundreds
             <br />
@@ -47,7 +53,13 @@ export const HeroSection: React.FC = () => {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="text-white/85 text-xs sm:text-sm md:text-[15px] font-normal max-w-[540px] lg:max-w-7xl mx-auto  leading-relaxed px-2 sm:px-4 my-10 lg:mb-14"
+            className="font-satoshi font-normal text-center text-white/85 text-sm sm:text-base md:text-[18px] leading-[160%] tracking-[0%] max-w-[540px] lg:max-w-7xl mx-auto px-2 sm:px-4 my-10 lg:mb-14"
+            style={{
+              fontFamily: "Satoshi, sans-serif",
+              fontWeight: 400,
+              lineHeight: "160%",
+              letterSpacing: "0%",
+            }}
           >
             Unlock your creativity, gain valuable knowledge, and grow your
             business with our wide range of courses.
@@ -140,17 +152,33 @@ export const HeroSection: React.FC = () => {
             className="absolute top-[6%] sm:top-[10%] md:top-[12%] lg:top-[25%] left-[0%] sm:left-[4%] md:left-[8%] lg:left-[19%] z-30 pointer-events-auto scale-[0.78] sm:scale-90 md:scale-100 origin-top-left"
           >
             <div className="bg-white rounded-xl sm:rounded-2xl p-2.5 sm:p-3 md:p-3.5 shadow-[0_16px_36px_rgba(0,0,0,0.18)] border border-white/70 backdrop-blur-sm min-w-[130px] sm:min-w-[145px] md:min-w-[160px]">
-              <h3 className="font-bold text-gray-900 text-xs sm:text-[13px] md:text-sm leading-tight tracking-tight">
+              <h3
+                className="font-satoshi font-medium text-gray-900 text-[16px] leading-[120%] tracking-[0%] align-middle"
+                style={{
+                  fontFamily: "Satoshi, sans-serif",
+                  fontWeight: 500,
+                  fontSize: "16px",
+                  lineHeight: "120%",
+                  letterSpacing: "0%",
+                  verticalAlign: "middle",
+                }}
+              >
                 UI/UX Design
               </h3>
-              {/* <p className="text-[9px] sm:text-[10px] md:text-[11px] text-gray-500 font-medium tracking-tight mt-0.5 whitespace-nowrap">
-                200 Courses
-                <span className=" mx-1.5 -mt-10 text-gray-400 text-[8px] text-start">&bull;</span> 1000+ Students
-              </p> */}
 
-              <div className="flex items-center text-[9px] sm:text-[10px] md:text-[11px] text-gray-500 font-medium tracking-tight mt-0.5 whitespace-nowrap">
-                <p>200 Courses</p>
-                <p className=" mx-1.5 -mt-1.5 text-gray-400 text-[8px] text-start">&bull;</p> <p className="text-center">1000+ Students</p>
+              <div
+                className="flex items-center text-gray-500 mt-1 whitespace-nowrap"
+                style={{
+                  fontFamily: "Satoshi, sans-serif",
+                  fontWeight: 400,
+                  fontSize: "12px",
+                  lineHeight: "160%",
+                  letterSpacing: "0%",
+                }}
+              >
+                <span>200 Courses</span>
+                <span className="mx-1.5 text-gray-400 text-[8px]">&bull;</span>
+                <span>1000+ Students</span>
               </div>
             </div>
           </motion.div>
@@ -177,10 +205,30 @@ export const HeroSection: React.FC = () => {
             className="absolute top-[10%] sm:top-[14%] md:top-[16%] lg:top-[28%] right-[0%] sm:right-[4%] md:right-[8%] lg:right-[11%]  xl:right-[19%] z-30 pointer-events-auto scale-[0.78] sm:scale-90 md:scale-100 origin-top-right"
           >
             <div className="bg-white rounded-xl sm:rounded-2xl p-2.5 sm:p-3.5 md:p-4 shadow-[0_16px_36px_rgba(0,0,0,0.18)] border border-white/70 backdrop-blur-sm min-w-[120px] sm:min-w-[140px] md:min-w-[200px]">
-              <span className="text-[9px] sm:text-[10px] md:text-[11px] text-gray-500 font-medium tracking-tight block">
+              <span
+                className="font-satoshi font-medium text-gray-500 text-[14px] leading-[120%] tracking-[0%] block align-middle"
+                style={{
+                  fontFamily: "Satoshi, sans-serif",
+                  fontWeight: 500,
+                  fontSize: "14px",
+                  lineHeight: "120%",
+                  letterSpacing: "0%",
+                  verticalAlign: "middle",
+                }}
+              >
                 Learning Progress
               </span>
-              <div className="text-xl sm:text-2xl md:text-[28px] lg:text-[40px] font-extrabold text-gray-950 leading-none mt-1 tracking-tight">
+              <div
+                className="font-poppins font-semibold text-gray-950 text-[32px] sm:text-[40px] md:text-[48px] leading-[120%] tracking-[-0.01em] mt-1 align-middle"
+                style={{
+                  fontFamily: "var(--font-poppins), 'Poppins', sans-serif",
+                  fontWeight: 600,
+                  fontSize: "48px",
+                  lineHeight: "120%",
+                  letterSpacing: "-1%",
+                  verticalAlign: "middle",
+                }}
+              >
                 55%
               </div>
               {/* Progress bar */}
@@ -215,7 +263,17 @@ export const HeroSection: React.FC = () => {
             className="absolute bottom-[6%] sm:bottom-[10%] md:bottom-[12%] left-[0%] sm:left-[2%] md:left-[4%] lg:left-[11%] z-30 pointer-events-auto scale-[0.78] sm:scale-90 md:scale-100 origin-bottom-left"
           >
             <div className="bg-white rounded-xl sm:rounded-2xl p-2.5 sm:p-3 md:p-3.5 shadow-[0_16px_36px_rgba(0,0,0,0.18)] border border-white/70 backdrop-blur-sm">
-              <h3 className="font-bold text-gray-900 text-xs sm:text-[13px] md:text-sm leading-tight tracking-tight">
+              <h3
+                className="font-satoshi font-medium text-gray-900 text-[16px] leading-[120%] tracking-[0%] align-middle"
+                style={{
+                  fontFamily: "Satoshi, sans-serif",
+                  fontWeight: 500,
+                  fontSize: "16px",
+                  lineHeight: "120%",
+                  letterSpacing: "0%",
+                  verticalAlign: "middle",
+                }}
+              >
                 Happy Students
               </h3>
               <div className="flex items-center gap-1 mt-0.5 mb-1.5 sm:mb-2">

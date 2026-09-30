@@ -124,7 +124,15 @@ export const CoursesSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="text-gray-950 text-3xl sm:text-4xl md:text-[44px] lg:text-[48px] font-bold sm:font-extrabold tracking-[-0.03em] leading-[1.15]"
+            className="font-poppins font-semibold text-center text-gray-950 text-3xl sm:text-4xl md:text-[44px] leading-[120%] tracking-[-0.01em]"
+            style={{
+              fontFamily: "var(--font-poppins), 'Poppins', sans-serif",
+              fontWeight: 600,
+              fontSize: "44px",
+              lineHeight: "120%",
+              letterSpacing: "-1%",
+              textAlign: "center",
+            }}
           >
             Discover Your Passion,
             <br />
@@ -136,7 +144,15 @@ export const CoursesSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="text-gray-500 text-xs sm:text-sm md:text-[15px] font-normal max-w-7xl mx-auto mt-3.5 sm:mt-4 leading-relaxed"
+            className="font-satoshi font-normal text-center text-gray-500 text-sm sm:text-base md:text-[18px] max-w-7xl mx-auto mt-3.5 sm:mt-4 leading-[160%] tracking-[0%]"
+            style={{
+              fontFamily: "Satoshi, sans-serif",
+              fontWeight: 400,
+              fontSize: "18px",
+              lineHeight: "160%",
+              letterSpacing: "0%",
+              textAlign: "center",
+            }}
           >
             At Bytespace Courses, we bring you closer to life-changing
             knowledge. Explore a variety of courses across different fields,
@@ -167,13 +183,22 @@ export const CoursesSection: React.FC = () => {
                     key={category}
                     type="button"
                     onClick={() => setActiveCategory(category)}
-                    className={`font-satoshi rounded-full px-4 sm:px-5 py-2 text-xs sm:text-[13px] md:text-sm font-medium transition-all duration-200 cursor-pointer ${
+                    className={`font-satoshi text-center align-middle rounded-full px-4 sm:px-5 py-2 sm:py-2.5 text-sm sm:text-[15px] md:text-[16px] leading-[120%] tracking-[0%] transition-all duration-200 cursor-pointer ${
                       isActive
                         ? "bg-[#d4fb20] text-gray-950 font-semibold shadow-xs scale-[1.02]"
                         : isMore
-                        ? "bg-none text-[#003BE2] font-semibold hover:bg-gray-200"
-                        : "bg-[#f3f4f6] text-gray-700 hover:bg-gray-200 hover:text-gray-900"
+                        ? "bg-none text-[#003BE2] font-medium hover:bg-gray-200"
+                        : "bg-[#f3f4f6] text-gray-700 font-medium hover:bg-gray-200 hover:text-gray-900"
                     }`}
+                    style={{
+                      fontFamily: "Satoshi, sans-serif",
+                      fontWeight: isActive ? 600 : 500,
+                      fontSize: "16px",
+                      lineHeight: "120%",
+                      letterSpacing: "0%",
+                      textAlign: "center",
+                      verticalAlign: "middle",
+                    }}
                   >
                     {category}
                   </button>

@@ -74,7 +74,17 @@ export const CourseCard: React.FC<CourseCardProps> = ({
 
       {/* 2. Title & Rating Row */}
       <div className="mt-4 sm:mt-5 flex items-start justify-between gap-3">
-        <h3 className="font-poppins font-bold text-lg sm:text-[21px] text-gray-950 tracking-tight leading-snug line-clamp-1 group-hover:text-[#003be2] transition-colors">
+        <h3
+          className="font-poppins font-semibold text-gray-950 text-lg sm:text-[20px] leading-[120%] tracking-[-0.01em] align-middle line-clamp-1 group-hover:text-[#003be2] transition-colors"
+          style={{
+            fontFamily: "var(--font-poppins), 'Poppins', sans-serif",
+            fontWeight: 600,
+            fontSize: "20px",
+            lineHeight: "120%",
+            letterSpacing: "-1%",
+            verticalAlign: "middle",
+          }}
+        >
           {course.title}
         </h3>
         <div
@@ -92,7 +102,17 @@ export const CourseCard: React.FC<CourseCardProps> = ({
       </div>
 
       {/* 3. Author Row */}
-      <div className="mt-1 text-xs sm:text-sm text-gray-500 font-poppins">
+      <div
+        className="mt-1 text-gray-500 font-satoshi font-normal text-[12px] leading-[160%] tracking-[0%] align-middle"
+        style={{
+          fontFamily: "Satoshi, sans-serif",
+          fontWeight: 400,
+          fontSize: "12px",
+          lineHeight: "160%",
+          letterSpacing: "0%",
+          verticalAlign: "middle",
+        }}
+      >
         by{" "}
         <span
           onClick={(e) => {
@@ -101,7 +121,15 @@ export const CourseCard: React.FC<CourseCardProps> = ({
               onAuthorClick(course.author, e);
             }
           }}
-          className="text-[#003be2] hover:underline font-medium cursor-pointer transition-colors"
+          className="text-[#003be2] hover:underline font-normal cursor-pointer transition-colors"
+          style={{
+            fontFamily: "Satoshi, sans-serif",
+            fontWeight: 400,
+            fontSize: "12px",
+            lineHeight: "160%",
+            letterSpacing: "0%",
+            verticalAlign: "middle",
+          }}
         >
           {course.author}
         </span>
@@ -110,9 +138,32 @@ export const CourseCard: React.FC<CourseCardProps> = ({
       {/* 4. Level Badge & Student Avatars Stack */}
       <div className="mt-4 sm:mt-5 flex items-center justify-between">
         {/* Level Pill */}
-        <div className="bg-[#f4f5f6] text-gray-700 text-xs sm:text-[13px] font-medium px-3.5 py-1.5 rounded-full flex items-center gap-1.5 font-poppins">
+        <div
+          className="bg-[#f4f5f6] text-gray-700 text-[12px] font-satoshi font-medium px-3.5 py-1.5 rounded-full flex items-center gap-1.5 text-center align-middle"
+          style={{
+            fontFamily: "Satoshi, sans-serif",
+            fontWeight: 500,
+            fontSize: "12px",
+            lineHeight: "120%",
+            letterSpacing: "0%",
+            textAlign: "center",
+            verticalAlign: "middle",
+          }}
+        >
           <BarChart2 className="w-3.5 h-3.5 text-gray-600" aria-hidden="true" />
-          <span>{course.level}</span>
+          <span
+            style={{
+              fontFamily: "Satoshi, sans-serif",
+              fontWeight: 500,
+              fontSize: "12px",
+              lineHeight: "120%",
+              letterSpacing: "0%",
+              textAlign: "center",
+              verticalAlign: "middle",
+            }}
+          >
+            {course.level}
+          </span>
         </div>
 
         {/* Overlapping Student Avatars Stack */}
@@ -144,11 +195,31 @@ export const CourseCard: React.FC<CourseCardProps> = ({
       </div>
 
       {/* 5. Price Row */}
-      <div className="mt-4 sm:mt-5 pt-1 flex items-baseline gap-1 font-poppins">
-        <span className="font-poppins text-2xl sm:text-[26px] font-extrabold text-[#003be2] tracking-tight">
+      <div className="mt-4 sm:mt-5 pt-1 flex items-baseline gap-1">
+        <span
+          className="font-poppins font-semibold text-[20px] text-[#003be2] leading-[120%] tracking-[-0.01em] align-middle"
+          style={{
+            fontFamily: "var(--font-poppins), 'Poppins', sans-serif",
+            fontWeight: 600,
+            fontSize: "20px",
+            lineHeight: "120%",
+            letterSpacing: "-1%",
+            verticalAlign: "middle",
+          }}
+        >
           {course.price}
         </span>
-        <span className="font-poppins text-xs sm:text-sm text-gray-400 font-normal">
+        <span
+          className="font-satoshi font-normal text-[12px] text-gray-400 leading-[160%] tracking-[0%] align-middle"
+          style={{
+            fontFamily: "Satoshi, sans-serif",
+            fontWeight: 400,
+            fontSize: "12px",
+            lineHeight: "160%",
+            letterSpacing: "0%",
+            verticalAlign: "middle",
+          }}
+        >
           {course.period}
         </span>
       </div>

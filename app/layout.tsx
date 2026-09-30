@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Poppins } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import MyContextProvider from "@/lib/MyContextProvider";
 import SessionProviderForNextAuth from "@/nextAuth/SessionProviderForNextAuth";
@@ -19,6 +20,33 @@ const poppins = Poppins({
   display: "swap",
 });
 
+const clashDisplay = localFont({
+  src: [
+    {
+      path: "../public/assets/fonts/ClashDisplay-Regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/assets/fonts/ClashDisplay-Medium.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../public/assets/fonts/ClashDisplay-Semibold.woff2",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../public/assets/fonts/ClashDisplay-Bold.woff2",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-clash-display",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "ByteSpace - Get Access to Hundreds Courses Available",
   description: "Unlock your creativity, gain valuable knowledge, and grow your business with our wide range of courses.",
@@ -34,10 +62,10 @@ export default function RootLayout({
       <head>
         <link
           rel="stylesheet"
-          href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400,300&display=swap"
+          href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400,300&f[]=clash-display@700,600,500,400&display=swap"
         />
       </head>
-      <body suppressHydrationWarning={true} className={`${plusJakartaSans.variable} ${poppins.variable} font-sans antialiased`}>
+      <body suppressHydrationWarning={true} className={`${plusJakartaSans.variable} ${poppins.variable} ${clashDisplay.variable} font-sans antialiased`}>
         <MyContextProvider>
           <SessionProviderForNextAuth>
             <ReduxStoreProvider>

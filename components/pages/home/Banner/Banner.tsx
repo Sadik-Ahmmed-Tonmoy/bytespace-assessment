@@ -54,7 +54,7 @@ export const Banner: React.FC = () => {
           y: { repeat: Infinity, duration: 4.5, ease: "easeInOut" },
           rotate: { repeat: Infinity, duration: 5, ease: "easeInOut" },
         }}
-        className="absolute top-3 sm:top-6 left-[14%] sm:left-[17%] md:left-[19%] w-12 sm:w-16 md:w-20 lg:w-44 pointer-events-none z-10"
+        className="absolute top-3 sm:top-6 left-[14%] sm:left-[17%] md:left-[10%] lg:left-[15%] w-12 sm:w-16 md:w-20 lg:w-28 xl:w-44 pointer-events-none z-10"
       >
         <Image
           src="/assets/images/unlock/white-coil.png"
@@ -76,7 +76,7 @@ export const Banner: React.FC = () => {
           scale: { duration: 0.6 },
           y: { repeat: Infinity, duration: 4.2, ease: "easeInOut" },
         }}
-        className="absolute -bottom-4 sm:bottom-15 -left-3 sm:-left-2 md:left-0 w-20 sm:w-28 md:w-36 lg:w-40 pointer-events-none z-10"
+        className="absolute -bottom-4 sm:bottom-15 -left-3 sm:-left-2 md:left-0 w-20 sm:w-28  xl:w-40 pointer-events-none z-10"
       >
         <Image
           src="/assets/images/unlock/white-cone.png"
@@ -121,7 +121,7 @@ export const Banner: React.FC = () => {
           y: { repeat: Infinity, duration: 4.3, ease: "easeInOut" },
           rotate: { repeat: Infinity, duration: 5, ease: "easeInOut" },
         }}
-        className="absolute top-4 sm:top-8 right-[15%] sm:right-[18%]  w-14 sm:w-18 md:w-24 lg:w-44 pointer-events-none z-10"
+        className="absolute top-4 sm:top-8 right-[15%] sm:right-[18%]  w-14 sm:w-18 md:w-24 lg:w-28 xl:w-44 pointer-events-none z-10"
       >
         <Image
           src="/assets/images/unlock/lime-pyramid.png"
@@ -143,7 +143,7 @@ export const Banner: React.FC = () => {
           scale: { duration: 0.6 },
           y: { repeat: Infinity, duration: 4.6, ease: "easeInOut" },
         }}
-        className="absolute -top-4 -right-4 sm:-right-2 md:right-0 w-36 sm:w-48 md:w-60 lg:w-56 pointer-events-none z-10"
+        className="absolute -top-4 -right-4 sm:-right-2 md:right-0 w-36 sm:w-48 md:w-44 xl:w-56 hidden lg:block pointer-events-none z-10"
       >
         <Image
           src="/assets/images/unlock/white-slab.png"
@@ -165,7 +165,7 @@ export const Banner: React.FC = () => {
           scale: { duration: 0.6 },
           y: { repeat: Infinity, duration: 4.5, ease: "easeInOut" },
         }}
-        className="absolute -bottom-8 sm:-bottom-12 md:-bottom-14 right-[4%] sm:right-[6%] md:right-[8%] w-28 sm:w-36 md:w-48 lg:w-56 pointer-events-none z-10"
+        className="absolute -bottom-0 right-[4%] sm:right-[6%] md:right-[8%] w-28 sm:w-36 md:w-48 lg:w-56 pointer-events-none z-10"
       >
         <Image
           src="/assets/images/unlock/lime-coil-right.png"
@@ -186,7 +186,15 @@ export const Banner: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="font-poppins font-semibold text-2xl sm:text-3xl md:text-4xl lg:text-[44px] leading-[1.2] tracking-[-0.01em] text-center text-white max-w-[760px]"
+          className="font-poppins font-semibold text-2xl sm:text-3xl md:text-4xl lg:text-[44px] leading-[120%] tracking-[-0.01em] text-center text-white max-w-[760px]"
+          style={{
+            fontFamily: "var(--font-poppins), 'Poppins', sans-serif",
+            fontWeight: 600,
+            fontSize: "44px",
+            lineHeight: "120%",
+            letterSpacing: "-1%",
+            textAlign: "center",
+          }}
         >
           Unlock Your Potential as a
           <br className="hidden sm:inline" /> Creator with ByteSpace
@@ -198,7 +206,15 @@ export const Banner: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="font-satoshi font-normal text-xs sm:text-sm md:text-base lg:text-[18px] leading-[1.6] tracking-normal text-center text-white/85 max-w-[840px] mx-auto mt-4 sm:mt-5"
+          className="font-satoshi font-normal text-xs sm:text-sm md:text-base lg:text-[18px] leading-[160%] tracking-[0%] text-center text-white/85 max-w-[970px] mx-auto mt-4 sm:mt-5"
+          style={{
+            fontFamily: "Satoshi, sans-serif",
+            fontWeight: 400,
+            fontSize: "18px",
+            lineHeight: "160%",
+            letterSpacing: "0%",
+            textAlign: "center",
+          }}
         >
           Experience the collaboration of numerous creators and an expanding
           selection of courses. Register now and become a part of a community

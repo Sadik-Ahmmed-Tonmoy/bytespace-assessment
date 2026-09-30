@@ -52,13 +52,18 @@ export const FeaturesSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              className="font-poppins font-semibold text-3xl sm:text-4xl lg:text-[44px] leading-[1.2] tracking-[-0.01em] text-gray-950"
+              className="font-poppins font-semibold text-3xl sm:text-4xl lg:text-[44px] leading-[120%] tracking-[-0.01em] text-gray-950"
+              style={{
+                fontFamily: "var(--font-poppins), 'Poppins', sans-serif",
+                fontWeight: 600,
+                fontSize: "44px",
+                lineHeight: "120%",
+                letterSpacing: "-1%",
+              }}
             >
               Your Path to Professional
               <br />
               Growth Starts Here!
-             
-              
             </motion.h2>
 
             <motion.p
@@ -66,7 +71,14 @@ export const FeaturesSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="font-satoshi font-normal text-sm sm:text-base lg:text-[18px] leading-[1.6] tracking-normal text-gray-500 mt-5 sm:mt-6 max-w-[470px]"
+              className="font-satoshi font-normal text-sm sm:text-base lg:text-[18px] leading-[160%] tracking-[0%] text-gray-500 mt-5 sm:mt-6 max-w-[470px]"
+              style={{
+                fontFamily: "Satoshi, sans-serif",
+                fontWeight: 400,
+                fontSize: "18px",
+                lineHeight: "160%",
+                letterSpacing: "0%",
+              }}
             >
               Explore our curated selection of courses tailored to enhance your
               capabilities and accelerate your career journey. Whether you are
@@ -85,30 +97,84 @@ export const FeaturesSection: React.FC = () => {
             >
               {/* Stat 1: 12K Students */}
               <div>
-                <span className="font-poppins font-medium text-2xl sm:text-3xl lg:text-[36px] leading-[44px] tracking-[-0.01em] text-[#003be2] block">
+                <span
+                  className="font-poppins font-medium text-2xl sm:text-3xl lg:text-[36px] leading-[44px] tracking-[-0.01em] text-[#003be2] block"
+                  style={{
+                    fontFamily: "var(--font-poppins), 'Poppins', sans-serif",
+                    fontWeight: 500,
+                    fontSize: "36px",
+                    lineHeight: "44px",
+                    letterSpacing: "-1%",
+                  }}
+                >
                   12K
                 </span>
-                <span className="font-satoshi font-normal text-sm sm:text-base lg:text-[18px] leading-[1.6] tracking-normal text-gray-500 block mt-0.5">
+                <span
+                  className="font-satoshi font-normal text-sm sm:text-base lg:text-[18px] leading-[160%] tracking-[0%] text-gray-500 block mt-0.5"
+                  style={{
+                    fontFamily: "Satoshi, sans-serif",
+                    fontWeight: 400,
+                    fontSize: "18px",
+                    lineHeight: "160%",
+                    letterSpacing: "0%",
+                  }}
+                >
                   Students
                 </span>
               </div>
 
               {/* Stat 2: 70+ Courses */}
               <div>
-                <span className="font-poppins font-medium text-2xl sm:text-3xl lg:text-[36px] leading-[44px] tracking-[-0.01em] text-[#003be2] block">
+                <span
+                  className="font-poppins font-medium text-2xl sm:text-3xl lg:text-[36px] leading-[44px] tracking-[-0.01em] text-[#003be2] block"
+                  style={{
+                    fontFamily: "var(--font-poppins), 'Poppins', sans-serif",
+                    fontWeight: 500,
+                    fontSize: "36px",
+                    lineHeight: "44px",
+                    letterSpacing: "-1%",
+                  }}
+                >
                   70+
                 </span>
-                <span className="font-satoshi font-normal text-sm sm:text-base lg:text-[18px] leading-[1.6] tracking-normal text-gray-500 block mt-0.5">
+                <span
+                  className="font-satoshi font-normal text-sm sm:text-base lg:text-[18px] leading-[160%] tracking-[0%] text-gray-500 block mt-0.5"
+                  style={{
+                    fontFamily: "Satoshi, sans-serif",
+                    fontWeight: 400,
+                    fontSize: "18px",
+                    lineHeight: "160%",
+                    letterSpacing: "0%",
+                  }}
+                >
                   Courses
                 </span>
               </div>
 
               {/* Stat 3: 16 Creators */}
               <div>
-                <span className="font-poppins font-medium text-2xl sm:text-3xl lg:text-[36px] leading-[44px] tracking-[-0.01em] text-[#003be2] block">
+                <span
+                  className="font-poppins font-medium text-2xl sm:text-3xl lg:text-[36px] leading-[44px] tracking-[-0.01em] text-[#003be2] block"
+                  style={{
+                    fontFamily: "var(--font-poppins), 'Poppins', sans-serif",
+                    fontWeight: 500,
+                    fontSize: "36px",
+                    lineHeight: "44px",
+                    letterSpacing: "-1%",
+                  }}
+                >
                   16
                 </span>
-                <span className="font-satoshi font-normal text-sm sm:text-base lg:text-[18px] leading-[1.6] tracking-normal text-gray-500 block mt-0.5">
+                <span
+                  className="font-satoshi font-normal text-sm sm:text-base lg:text-[18px] leading-[160%] tracking-[0%] text-gray-500 block mt-0.5"
+                  style={{
+                    fontFamily: "Satoshi, sans-serif",
+                    fontWeight: 400,
+                    fontSize: "18px",
+                    lineHeight: "160%",
+                    letterSpacing: "0%",
+                  }}
+                >
                   Creators
                 </span>
               </div>
@@ -167,7 +233,14 @@ export const FeaturesSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              className="font-poppins font-semibold text-3xl sm:text-4xl lg:text-[44px] leading-[1.2] tracking-[-0.01em] text-gray-950"
+              className="font-poppins font-semibold text-3xl sm:text-4xl lg:text-[44px] leading-[120%] tracking-[-0.01em] text-gray-950"
+              style={{
+                fontFamily: "var(--font-poppins), 'Poppins', sans-serif",
+                fontWeight: 600,
+                fontSize: "44px",
+                lineHeight: "120%",
+                letterSpacing: "-1%",
+              }}
             >
               Create &amp; Manage
               <br />
@@ -179,9 +252,25 @@ export const FeaturesSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="font-satoshi text-sm sm:text-base lg:text-[18px] leading-[28px] tracking-normal text-gray-500 mt-5 sm:mt-6 max-w-[490px]"
+              className="font-satoshi font-normal text-sm sm:text-base lg:text-[18px] leading-[28px] tracking-[0%] text-gray-500 mt-5 sm:mt-6 max-w-[490px]"
+              style={{
+                fontFamily: "Satoshi, sans-serif",
+                fontWeight: 400,
+                fontSize: "18px",
+                lineHeight: "28px",
+                letterSpacing: "0%",
+              }}
             >
-              <strong className="font-satoshi font-bold text-gray-900">
+              <strong
+                className="font-satoshi font-bold text-gray-900"
+                style={{
+                  fontFamily: "Satoshi, sans-serif",
+                  fontWeight: 700,
+                  fontSize: "18px",
+                  lineHeight: "28px",
+                  letterSpacing: "0%",
+                }}
+              >
                 ByteSpace
               </strong>{" "}
               supports individuals or entities in the creation, publication,
@@ -214,7 +303,16 @@ export const FeaturesSection: React.FC = () => {
                       <polyline points="20 6 9 17 4 12" />
                     </svg>
                   </div>
-                  <span className="font-satoshi font-medium text-base sm:text-lg lg:text-[18px] leading-[1.2] tracking-normal text-gray-900">
+                  <span
+                    className="font-satoshi font-medium text-base sm:text-lg lg:text-[18px] leading-[120%] tracking-[0%] text-gray-900"
+                    style={{
+                      fontFamily: "Satoshi, sans-serif",
+                      fontWeight: 500,
+                      fontSize: "18px",
+                      lineHeight: "120%",
+                      letterSpacing: "0%",
+                    }}
+                  >
                     {item}
                   </span>
                 </div>

@@ -60,7 +60,16 @@ export const LearningPathCard: React.FC<LearningPathCardProps> = ({
       </div>
 
       {/* Category Label */}
-      <h3 className="font-satoshi font-medium text-lg sm:text-[19px] md:text-[20px] leading-[1.2] tracking-normal text-gray-950 mt-5 sm:mt-6 group-hover:text-[#003be2] transition-colors whitespace-nowrap">
+      <h3
+        className="font-satoshi font-medium text-lg sm:text-[19px] md:text-[20px] leading-[120%] tracking-[0%] text-gray-950 mt-5 sm:mt-6 group-hover:text-[#003be2] transition-colors whitespace-nowrap"
+        style={{
+          fontFamily: "Satoshi, sans-serif",
+          fontWeight: 500,
+          fontSize: "20px",
+          lineHeight: "120%",
+          letterSpacing: "0%",
+        }}
+      >
         {item.title}
       </h3>
     </motion.div>
