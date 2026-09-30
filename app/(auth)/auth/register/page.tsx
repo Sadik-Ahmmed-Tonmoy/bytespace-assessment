@@ -7,7 +7,27 @@ import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { BarChart2, Star, Eye, EyeOff } from "lucide-react";
 import { toast } from "sonner";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
 import { useRegisterMutation } from "@/redux/features/auth/authApi";
+
+const registerSchema = z.object({
+  name: z
+    .string()
+    .min(1, "Full Name is required")
+    .min(2, "Full Name must be at least 2 characters"),
+  email: z
+    .string()
+    .min(1, "Email is required")
+    .email("Please enter a valid email address"),
+  password: z
+    .string()
+    .min(1, "Password is required")
+    .min(6, "Password must be at least 6 characters"),
+});
+
+type RegisterFormData = z.infer<typeof registerSchema>;
 
 const studentAvatars = [
   "/assets/images/happy-students/student-1.png",
@@ -27,39 +47,25 @@ const happyStudentList = [
 export default function RegisterPage() {
   const router = useRouter();
   const [registerUser, { isLoading }] = useRegisterMutation();
-
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    password: "",
-  });
   const [showPassword, setShowPassword] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
-  };
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<RegisterFormData>({
+    resolver: zodResolver(registerSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      password: "",
+    },
+    mode: "onTouched",
+  });
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    if (!formData.name.trim()) {
-      toast.error("Please enter your full name");
-      return;
-    }
-    if (!formData.email.trim() || !formData.email.includes("@")) {
-      toast.error("Please enter a valid email address");
-      return;
-    }
-    if (formData.password.length < 6) {
-      toast.error("Password must be at least 6 characters");
-      return;
-    }
-
+  const onSubmit = async (data: RegisterFormData) => {
     try {
-      const res = await registerUser(formData).unwrap();
+      const res = await registerUser(data).unwrap();
       toast.success("Account created successfully!");
       if (res?.data?.token) {
         router.push("/dashboard");
@@ -116,7 +122,14 @@ export default function RegisterPage() {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="font-poppins font-semibold text-2xl sm:text-3xl lg:text-[34px] leading-tight text-white tracking-tight"
+            className="font-poppins font-semibold text-white text-[20px] leading-[120%] tracking-[-0.01em]"
+            style={{
+              fontFamily: "var(--font-poppins), 'Poppins', sans-serif",
+              fontWeight: 600,
+              fontSize: "20px",
+              lineHeight: "120%",
+              letterSpacing: "-1%",
+            }}
           >
             Sign up and come in
           </motion.h1>
@@ -126,7 +139,14 @@ export default function RegisterPage() {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="font-satoshi font-normal text-sm sm:text-base leading-relaxed text-white/80 max-w-[460px] mt-3 mb-10 sm:mb-14"
+            className="font-satoshi font-normal text-white text-[18px] leading-[160%] tracking-[0%] max-w-[480px] mt-4 mb-10 sm:mb-14"
+            style={{
+              fontFamily: "Satoshi, sans-serif",
+              fontWeight: 400,
+              fontSize: "18px",
+              lineHeight: "160%",
+              letterSpacing: "0%",
+            }}
           >
             The registration process is straightforward, uncomplicated, and efficient, allowing users to sign up quickly, easily, and at no cost
           </motion.p>
@@ -134,7 +154,7 @@ export default function RegisterPage() {
           {/* ======================================================================= */}
           {/* FLOATING COMPOSITION (Cards + 3D Elements) */}
           {/* ======================================================================= */}
-          <div className="relative w-full max-w-[500px] h-[360px] sm:h-[400px] md:h-[430px] hidden sm:block">
+          <div className="relative w-full max-w-[500px] h-[360px] sm:h-[400px] md:h-[430px] hidden lg:block">
             {/* 1. Lime 3D Ring (Top Left) */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
@@ -150,7 +170,7 @@ export default function RegisterPage() {
                 y: { repeat: Infinity, duration: 4.5, ease: "easeInOut" },
                 rotate: { repeat: Infinity, duration: 5, ease: "easeInOut" },
               }}
-              className="absolute -top-6 -left-3 sm:-top-8 sm:-left-4 w-20 sm:w-24 z-30 pointer-events-none"
+              className="absolute -top-6 -left-3 sm:top-2 sm:left-4 w-20 sm:w-34 z-30 pointer-events-none"
             >
               <Image
                 src="/assets/images/signup/lime-ring.png"
@@ -176,7 +196,7 @@ export default function RegisterPage() {
                 y: { repeat: Infinity, duration: 4, ease: "easeInOut" },
                 rotate: { repeat: Infinity, duration: 5.5, ease: "easeInOut" },
               }}
-              className="absolute -bottom-8 -left-3 sm:-bottom-10 sm:-left-4 w-24 sm:w-30 z-30 pointer-events-none"
+              className="absolute -bottom-8 -left-3 sm:-bottom-10 sm:-left-4 w-24 sm:w-44 z-30 pointer-events-none"
             >
               <Image
                 src="/assets/images/signup/lime-pyramid.png"
@@ -202,13 +222,13 @@ export default function RegisterPage() {
                 y: { repeat: Infinity, duration: 5, ease: "easeInOut" },
                 rotate: { repeat: Infinity, duration: 6, ease: "easeInOut" },
               }}
-              className="absolute bottom-16 -right-2 sm:bottom-20 sm:right-4 w-22 sm:w-26 z-30 pointer-events-none"
+              className="absolute bottom-16 -right-2 sm:bottom-8 sm:right-4 w-22 sm:w-34 z-30 pointer-events-none"
             >
               <Image
                 src="/assets/images/signup/white-spring.png"
                 alt="3D White Spring"
-                width={110}
-                height={110}
+                width={210}
+                height={210}
                 className="w-full h-auto object-contain drop-shadow-[0_12px_24px_rgba(0,0,0,0.15)]"
               />
             </motion.div>
@@ -218,7 +238,7 @@ export default function RegisterPage() {
               initial={{ opacity: 0, x: -20, y: 15 }}
               animate={{ opacity: 0.95, x: 0, y: 0 }}
               transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-              className="absolute top-10 left-0 w-[240px] sm:w-[265px] bg-white rounded-[22px] sm:rounded-[24px] p-3 sm:p-3.5 shadow-[0_16px_36px_rgba(0,0,0,0.14)] border border-white/70 z-10"
+              className="absolute top-20 left-0 w-[240px] sm:w-[355px] bg-white rounded-[22px] sm:rounded-[24px] p-3 sm:p-3.5 shadow-[0_16px_36px_rgba(0,0,0,0.14)] border border-white/70 z-10"
             >
               {/* Image with Tag */}
               <div className="relative w-full aspect-[700/400] rounded-[14px] overflow-hidden bg-gray-100">
@@ -229,9 +249,7 @@ export default function RegisterPage() {
                   sizes="265px"
                   className="object-cover"
                 />
-                <span className="absolute bottom-2 left-2 px-2.5 py-0.5 rounded-full bg-black/50 backdrop-blur-md text-white font-satoshi text-[9px]">
-                  17 Lessons
-                </span>
+              
               </div>
               {/* Content */}
               <div className="mt-2.5">
@@ -393,78 +411,130 @@ export default function RegisterPage() {
             className="w-full max-w-[480px] lg:max-w-[500px] bg-white rounded-[32px] sm:rounded-[36px] p-7 sm:p-10 lg:p-12 shadow-[0_24px_64px_rgba(0,0,0,0.22)]"
           >
             {/* Header */}
-            <span className="font-satoshi font-medium text-sm sm:text-base text-[#003be2] block">
+            <span
+              className="font-satoshi font-normal text-[18px] leading-[160%] tracking-[0%] text-[#003be2] block"
+              style={{
+                fontFamily: "Satoshi, sans-serif",
+                fontWeight: 400,
+                fontSize: "18px",
+                lineHeight: "160%",
+                letterSpacing: "0%",
+              }}
+            >
               Create an Account
             </span>
-            <h2 className="font-poppins font-semibold text-3xl sm:text-4xl lg:text-[44px] leading-[1.2] tracking-[-0.01em] text-gray-950 mt-1.5 mb-7 sm:mb-9">
+            <h2
+              className="font-poppins font-semibold text-3xl sm:text-4xl lg:text-[44px] leading-[120%] tracking-[-0.01em] text-gray-950 mt-1 mb-7 sm:mb-8"
+              style={{
+                fontFamily: "var(--font-poppins), 'Poppins', sans-serif",
+                fontWeight: 600,
+                fontSize: "44px",
+                lineHeight: "120%",
+                letterSpacing: "-1%",
+              }}
+            >
               Welcome to<br />ByteSpace
             </h2>
 
             {/* Form */}
-            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 sm:space-y-5">
               {/* Full Name */}
               <div>
                 <label
                   htmlFor="name"
-                  className="block font-satoshi text-xs sm:text-sm font-medium text-gray-700 mb-1.5"
+                  className="block font-satoshi font-medium text-[14px] leading-[120%] tracking-[0%] text-gray-700 mb-2"
+                  style={{
+                    fontFamily: "Satoshi, sans-serif",
+                    fontWeight: 500,
+                    fontSize: "14px",
+                    lineHeight: "120%",
+                    letterSpacing: "0%",
+                  }}
                 >
                   Full Name
                 </label>
                 <input
                   id="name"
-                  name="name"
+                  {...register("name")}
                   type="text"
-                  value={formData.name}
-                  onChange={handleChange}
                   placeholder="Jamie Davis"
-                  required
-                  className="w-full px-4 sm:px-5 py-3 sm:py-3.5 rounded-[14px] sm:rounded-[16px] border border-gray-200 text-gray-950 placeholder:text-gray-400 font-satoshi text-sm sm:text-base bg-white focus:outline-none focus:border-gray-950 focus:ring-1 focus:ring-gray-950 transition-all"
+                  className={`w-full px-4 sm:px-5 py-3 sm:py-3.5 rounded-[14px] sm:rounded-[16px] border ${
+                    errors.name
+                      ? "border-red-500 focus:border-red-500 focus:ring-red-500"
+                      : "border-gray-200 focus:border-gray-950 focus:ring-gray-950"
+                  } text-gray-950 placeholder:text-gray-400 font-satoshi text-sm sm:text-base bg-white focus:outline-none focus:ring-1 transition-all`}
                 />
+                {errors.name && (
+                  <p className="mt-1.5 text-xs text-red-500 font-satoshi">
+                    {errors.name.message}
+                  </p>
+                )}
               </div>
 
               {/* Email */}
               <div>
                 <label
                   htmlFor="email"
-                  className="block font-satoshi text-xs sm:text-sm font-medium text-gray-700 mb-1.5"
+                  className="block font-satoshi font-medium text-[14px] leading-[120%] tracking-[0%] text-gray-700 mb-2"
+                  style={{
+                    fontFamily: "Satoshi, sans-serif",
+                    fontWeight: 500,
+                    fontSize: "14px",
+                    lineHeight: "120%",
+                    letterSpacing: "0%",
+                  }}
                 >
                   Email
                 </label>
                 <input
                   id="email"
-                  name="email"
+                  {...register("email")}
                   type="email"
-                  value={formData.email}
-                  onChange={handleChange}
                   placeholder="designer@example.com"
-                  required
-                  className="w-full px-4 sm:px-5 py-3 sm:py-3.5 rounded-[14px] sm:rounded-[16px] border border-gray-200 text-gray-950 placeholder:text-gray-400 font-satoshi text-sm sm:text-base bg-white focus:outline-none focus:border-gray-950 focus:ring-1 focus:ring-gray-950 transition-all"
+                  className={`w-full px-4 sm:px-5 py-3 sm:py-3.5 rounded-[14px] sm:rounded-[16px] border ${
+                    errors.email
+                      ? "border-red-500 focus:border-red-500 focus:ring-red-500"
+                      : "border-gray-200 focus:border-gray-950 focus:ring-gray-950"
+                  } text-gray-950 placeholder:text-gray-400 font-satoshi text-sm sm:text-base bg-white focus:outline-none focus:ring-1 transition-all`}
                 />
+                {errors.email && (
+                  <p className="mt-1.5 text-xs text-red-500 font-satoshi">
+                    {errors.email.message}
+                  </p>
+                )}
               </div>
 
               {/* Password */}
               <div>
                 <label
                   htmlFor="password"
-                  className="block font-satoshi text-xs sm:text-sm font-medium text-gray-700 mb-1.5"
+                  className="block font-satoshi font-medium text-[14px] leading-[120%] tracking-[0%] text-gray-700 mb-2"
+                  style={{
+                    fontFamily: "Satoshi, sans-serif",
+                    fontWeight: 500,
+                    fontSize: "14px",
+                    lineHeight: "120%",
+                    letterSpacing: "0%",
+                  }}
                 >
                   Password
                 </label>
                 <div className="relative">
                   <input
                     id="password"
-                    name="password"
+                    {...register("password")}
                     type={showPassword ? "text" : "password"}
-                    value={formData.password}
-                    onChange={handleChange}
                     placeholder="********"
-                    required
-                    className="w-full px-4 sm:px-5 py-3 sm:py-3.5 rounded-[14px] sm:rounded-[16px] border border-gray-200 text-gray-950 placeholder:text-gray-400 font-satoshi text-sm sm:text-base bg-white focus:outline-none focus:border-gray-950 focus:ring-1 focus:ring-gray-950 transition-all pr-12"
+                    className={`w-full px-4 sm:px-5 py-3 sm:py-3.5 rounded-[14px] sm:rounded-[16px] border ${
+                      errors.password
+                        ? "border-red-500 focus:border-red-500 focus:ring-red-500"
+                        : "border-gray-200 focus:border-gray-950 focus:ring-gray-950"
+                    } text-gray-950 placeholder:text-gray-400 font-satoshi text-sm sm:text-base bg-white focus:outline-none focus:ring-1 transition-all pr-12`}
                   />
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors p-1"
+                    className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors p-1 cursor-pointer"
                     aria-label={showPassword ? "Hide password" : "Show password"}
                   >
                     {showPassword ? (
@@ -474,6 +544,11 @@ export default function RegisterPage() {
                     )}
                   </button>
                 </div>
+                {errors.password && (
+                  <p className="mt-1.5 text-xs text-red-500 font-satoshi">
+                    {errors.password.message}
+                  </p>
+                )}
               </div>
 
               {/* Submit Button (Right Aligned Pill) */}
@@ -489,12 +564,28 @@ export default function RegisterPage() {
             </form>
 
             {/* Bottom link */}
-            <div className="mt-10 sm:mt-14 text-center">
-              <p className="font-satoshi text-xs sm:text-sm text-gray-500">
+            <div className="mt-8 sm:mt-12 text-center">
+              <p
+                className="font-satoshi font-normal text-[16px] leading-[160%] tracking-[0%] text-gray-500"
+                style={{
+                  fontFamily: "Satoshi, sans-serif",
+                  fontWeight: 400,
+                  fontSize: "16px",
+                  lineHeight: "160%",
+                  letterSpacing: "0%",
+                }}
+              >
                 Already have an account?{" "}
                 <Link
                   href="/auth/login"
-                  className="text-[#003be2] font-semibold hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-[#003be2] rounded"
+                  className="text-[#003be2] font-normal hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-[#003be2] rounded"
+                  style={{
+                    fontFamily: "Satoshi, sans-serif",
+                    fontWeight: 400,
+                    fontSize: "16px",
+                    lineHeight: "160%",
+                    letterSpacing: "0%",
+                  }}
                 >
                   Login
                 </Link>

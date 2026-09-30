@@ -149,252 +149,250 @@ export default function LoginPage() {
           {/* ======================================================================= */}
           {/* FLOATING COMPOSITION (Cards + 3D Elements) */}
           {/* ======================================================================= */}
-          <div className="relative w-full max-w-[500px] h-[360px] sm:h-[400px] md:h-[430px] hidden sm:block">
-            {/* 1. Lime 3D Ring (Top Left) */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{
-                opacity: 1,
-                scale: 1,
-                y: [0, -8, 0],
-                rotate: [0, 4, 0],
-              }}
-              transition={{
-                opacity: { duration: 0.6 },
-                scale: { duration: 0.6 },
-                y: { repeat: Infinity, duration: 4.5, ease: "easeInOut" },
-                rotate: { repeat: Infinity, duration: 5, ease: "easeInOut" },
-              }}
-              className="absolute -top-6 -left-3 sm:-top-8 sm:-left-4 w-20 sm:w-24 z-30 pointer-events-none"
-            >
-              <Image
-                src="/assets/images/signup/lime-ring.png"
-                alt="3D Lime Ring"
-                width={100}
-                height={100}
-                className="w-full h-auto object-contain drop-shadow-[0_12px_24px_rgba(0,0,0,0.15)]"
-              />
-            </motion.div>
-
-            {/* 2. Lime 3D Pyramid (Bottom Left) */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{
-                opacity: 1,
-                scale: 1,
-                y: [0, 8, 0],
-                rotate: [-2, 2, -2],
-              }}
-              transition={{
-                opacity: { duration: 0.6, delay: 0.1 },
-                scale: { duration: 0.6 },
-                y: { repeat: Infinity, duration: 4, ease: "easeInOut" },
-                rotate: { repeat: Infinity, duration: 5.5, ease: "easeInOut" },
-              }}
-              className="absolute -bottom-8 -left-3 sm:-bottom-10 sm:-left-4 w-24 sm:w-30 z-30 pointer-events-none"
-            >
-              <Image
-                src="/assets/images/signup/lime-pyramid.png"
-                alt="3D Lime Pyramid"
-                width={120}
-                height={120}
-                className="w-full h-auto object-contain drop-shadow-[0_16px_30px_rgba(0,0,0,0.2)]"
-              />
-            </motion.div>
-
-            {/* 3. White 3D Spring (Bottom Right) */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{
-                opacity: 1,
-                scale: 1,
-                y: [0, -6, 0],
-                rotate: [0, -3, 0],
-              }}
-              transition={{
-                opacity: { duration: 0.6, delay: 0.2 },
-                scale: { duration: 0.6 },
-                y: { repeat: Infinity, duration: 5, ease: "easeInOut" },
-                rotate: { repeat: Infinity, duration: 6, ease: "easeInOut" },
-              }}
-              className="absolute bottom-16 -right-2 sm:bottom-20 sm:right-4 w-22 sm:w-26 z-30 pointer-events-none"
-            >
-              <Image
-                src="/assets/images/signup/white-spring.png"
-                alt="3D White Spring"
-                width={110}
-                height={110}
-                className="w-full h-auto object-contain drop-shadow-[0_12px_24px_rgba(0,0,0,0.15)]"
-              />
-            </motion.div>
-
-            {/* 4. Back Card: "Build Digital Asset" */}
-            <motion.div
-              initial={{ opacity: 0, x: -20, y: 15 }}
-              animate={{ opacity: 0.95, x: 0, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-              className="absolute top-10 left-0 w-[240px] sm:w-[265px] bg-white rounded-[22px] sm:rounded-[24px] p-3 sm:p-3.5 shadow-[0_16px_36px_rgba(0,0,0,0.14)] border border-white/70 z-10"
-            >
-              {/* Image with Tag */}
-              <div className="relative w-full aspect-[700/400] rounded-[14px] overflow-hidden bg-gray-100">
-                <Image
-                  src="/assets/images/courses/course-2.png"
-                  alt="Build Digital Asset Mockup"
-                  fill
-                  sizes="265px"
-                  className="object-cover"
-                />
-                <span className="absolute bottom-2 left-2 px-2.5 py-0.5 rounded-full bg-black/50 backdrop-blur-md text-white font-satoshi text-[9px]">
-                  17 Lessons
-                </span>
-              </div>
-              {/* Content */}
-              <div className="mt-2.5">
-                <h4 className="font-poppins font-bold text-xs sm:text-[13px] text-gray-950 truncate">
-                  Build Digital Asset
-                </h4>
-                <p className="text-[10px] text-gray-400 font-poppins mt-0.5">
-                  by <span className="text-[#003be2]">purepearl studio</span>
-                </p>
-                <div className="mt-2 flex items-center justify-between">
-                  <span className="bg-[#f4f5f6] text-gray-700 text-[10px] font-medium px-2 py-0.5 rounded-full flex items-center gap-1 font-poppins">
-                    <BarChart2 className="w-2.5 h-2.5 text-gray-500" />
-                    Beginner
-                  </span>
-                  <div className="flex items-center -space-x-1.5">
-                    {studentAvatars.slice(0, 3).map((avatar, idx) => (
-                      <div
-                        key={idx}
-                        className="relative w-4 h-4 rounded-full overflow-hidden border border-white"
-                      >
-                        <Image src={avatar} alt="Student" fill className="object-cover" />
-                      </div>
-                    ))}
-                    <div className="w-4 h-4 rounded-full bg-black text-white text-[7px] font-bold flex items-center justify-center border border-white">
-                      26+
-                    </div>
-                  </div>
-                </div>
-                <div className="mt-2 pt-1 border-t border-gray-100 flex items-baseline gap-0.5 font-poppins">
-                  <span className="text-xs font-bold text-[#003be2]">$25</span>
-                  <span className="text-[9px] text-gray-400">/lifetime</span>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* 5. Front Card: "the Power of Big Data" */}
-            <motion.div
-              initial={{ opacity: 0, y: 25 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
-              className="absolute top-2 left-20 sm:left-24 w-[280px] sm:w-[320px] bg-white rounded-[24px] sm:rounded-[26px] p-3.5 sm:p-4 shadow-[0_22px_50px_rgba(0,0,0,0.22)] border border-white/80 z-20"
-            >
-              {/* Image with 3 Overlay Badges */}
-              <div className="relative w-full aspect-[700/400] rounded-[16px] overflow-hidden bg-gray-900">
-                <Image
-                  src="/assets/images/courses/course-3.png"
-                  alt="the Power of Big Data"
-                  fill
-                  sizes="320px"
-                  className="object-cover"
-                />
-                <div className="absolute bottom-2 left-2 flex items-center gap-1.5 flex-wrap">
-                  <span className="px-2 py-0.5 rounded-full bg-black/60 backdrop-blur-md text-white font-satoshi text-[9px]">
-                    17 Lessons
-                  </span>
-                  <span className="px-2 py-0.5 rounded-full bg-black/60 backdrop-blur-md text-white font-satoshi text-[9px]">
-                    2 hours 16 mins
-                  </span>
-                  <span className="px-2 py-0.5 rounded-full bg-black/60 backdrop-blur-md text-white font-satoshi text-[9px]">
-                    59 Comments
-                  </span>
-                </div>
-              </div>
-
-              {/* Course Info */}
-              <div className="mt-3">
-                <div className="flex items-center justify-between gap-2">
-                  <h4 className="font-poppins font-bold text-sm sm:text-base text-gray-950 truncate">
-                    the Power of Big Data
-                  </h4>
-                  <div className="flex items-center gap-1 shrink-0">
-                    <span className="text-xs font-semibold text-gray-800 font-poppins">
-                      4.5
-                    </span>
-                    <Star className="w-3 h-3 text-[#d4fb20] fill-[#d4fb20]" />
-                  </div>
-                </div>
-
-                <p className="text-[11px] text-gray-400 font-poppins mt-0.5">
-                  by <span className="text-[#003be2]">purepearl studio</span>
-                </p>
-
-                {/* Tags & Avatars */}
-                <div className="mt-2.5 flex items-center justify-between">
-                  <span className="bg-[#f4f5f6] text-gray-700 text-[11px] font-medium px-2.5 py-0.5 rounded-full flex items-center gap-1 font-poppins">
-                    <BarChart2 className="w-3 h-3 text-gray-500" />
-                    Beginner
-                  </span>
-
-                  <div className="flex items-center -space-x-2">
-                    {studentAvatars.map((avatar, idx) => (
-                      <div
-                        key={idx}
-                        className="relative w-5 h-5 rounded-full overflow-hidden border-2 border-white shadow-xs"
-                      >
-                        <Image src={avatar} alt="Student" fill className="object-cover" />
-                      </div>
-                    ))}
-                    <div className="w-5 h-5 rounded-full bg-black text-white text-[8px] font-bold flex items-center justify-center border-2 border-white shadow-xs">
-                      26+
-                    </div>
-                  </div>
-                </div>
-
-                {/* Price */}
-                <div className="mt-2.5 pt-1.5 border-t border-gray-100 flex items-baseline gap-0.5 font-poppins">
-                  <span className="text-base font-extrabold text-[#003be2]">$25</span>
-                  <span className="text-xs text-gray-400 font-normal">/lifetime</span>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* 6. Happy Students Badge (Bottom Right, Lime Background) */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
-              className="absolute -bottom-4 right-0 sm:right-2 bg-[#d4fb20] rounded-[22px] sm:rounded-[24px] px-4 py-3 sm:py-3.5 shadow-xl z-25 min-w-[195px] sm:min-w-[215px]"
-            >
-              <h5 className="font-poppins font-bold text-xs sm:text-[13px] text-gray-950">
-                Happy Students
-              </h5>
-              <div className="flex items-center gap-1 mt-0.5 mb-2">
-                <span className="text-[11px] font-bold text-gray-900 font-poppins">
-                  4.5
-                </span>
-                <span className="text-[10px] text-gray-700 font-poppins">
-                  (240)
-                </span>
-                <Star className="w-3 h-3 text-[#003be2] fill-[#003be2] ml-0.5" />
-              </div>
-
-              {/* Avatar Stack */}
-              <div className="flex items-center -space-x-1.5">
-                {happyStudentList.slice(0, 4).map((avatar, idx) => (
-                  <div
-                    key={idx}
-                    className="relative w-5 h-5 sm:w-6 sm:h-6 rounded-full overflow-hidden border-[1.5px] border-white shadow-xs"
-                  >
-                    <Image src={avatar} alt="Happy student" fill className="object-cover" />
-                  </div>
-                ))}
-                <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-black text-white text-[8px] font-bold flex items-center justify-center border-[1.5px] border-white shadow-xs">
-                  2K+
-                </div>
-              </div>
-            </motion.div>
-          </div>
+         <div className="relative w-full max-w-[500px] h-[360px] sm:h-[400px] md:h-[430px] hidden lg:block">
+                   {/* 1. Lime 3D Ring (Top Left) */}
+                   <motion.div
+                     initial={{ opacity: 0, scale: 0.8 }}
+                     animate={{
+                       opacity: 1,
+                       scale: 1,
+                       y: [0, -8, 0],
+                       rotate: [0, 4, 0],
+                     }}
+                     transition={{
+                       opacity: { duration: 0.6 },
+                       scale: { duration: 0.6 },
+                       y: { repeat: Infinity, duration: 4.5, ease: "easeInOut" },
+                       rotate: { repeat: Infinity, duration: 5, ease: "easeInOut" },
+                     }}
+                     className="absolute -top-6 -left-3 sm:top-2 sm:left-4 w-20 sm:w-34 z-30 pointer-events-none"
+                   >
+                     <Image
+                       src="/assets/images/signup/lime-ring.png"
+                       alt="3D Lime Ring"
+                       width={100}
+                       height={100}
+                       className="w-full h-auto object-contain drop-shadow-[0_12px_24px_rgba(0,0,0,0.15)]"
+                     />
+                   </motion.div>
+       
+                   {/* 2. Lime 3D Pyramid (Bottom Left) */}
+                   <motion.div
+                     initial={{ opacity: 0, scale: 0.8 }}
+                     animate={{
+                       opacity: 1,
+                       scale: 1,
+                       y: [0, 8, 0],
+                       rotate: [-2, 2, -2],
+                     }}
+                     transition={{
+                       opacity: { duration: 0.6, delay: 0.1 },
+                       scale: { duration: 0.6 },
+                       y: { repeat: Infinity, duration: 4, ease: "easeInOut" },
+                       rotate: { repeat: Infinity, duration: 5.5, ease: "easeInOut" },
+                     }}
+                     className="absolute -bottom-8 -left-3 sm:-bottom-10 sm:-left-4 w-24 sm:w-44 z-30 pointer-events-none"
+                   >
+                     <Image
+                       src="/assets/images/signup/lime-pyramid.png"
+                       alt="3D Lime Pyramid"
+                       width={120}
+                       height={120}
+                       className="w-full h-auto object-contain drop-shadow-[0_16px_30px_rgba(0,0,0,0.2)]"
+                     />
+                   </motion.div>
+       
+                   {/* 3. White 3D Spring (Bottom Right) */}
+                   <motion.div
+                     initial={{ opacity: 0, scale: 0.8 }}
+                     animate={{
+                       opacity: 1,
+                       scale: 1,
+                       y: [0, -6, 0],
+                       rotate: [0, -3, 0],
+                     }}
+                     transition={{
+                       opacity: { duration: 0.6, delay: 0.2 },
+                       scale: { duration: 0.6 },
+                       y: { repeat: Infinity, duration: 5, ease: "easeInOut" },
+                       rotate: { repeat: Infinity, duration: 6, ease: "easeInOut" },
+                     }}
+                     className="absolute bottom-16 -right-2 sm:bottom-8 sm:right-4 w-22 sm:w-34 z-30 pointer-events-none"
+                   >
+                     <Image
+                       src="/assets/images/signup/white-spring.png"
+                       alt="3D White Spring"
+                       width={210}
+                       height={210}
+                       className="w-full h-auto object-contain drop-shadow-[0_12px_24px_rgba(0,0,0,0.15)]"
+                     />
+                   </motion.div>
+       
+                   {/* 4. Back Card: "Build Digital Asset" */}
+                   <motion.div
+                     initial={{ opacity: 0, x: -20, y: 15 }}
+                     animate={{ opacity: 0.95, x: 0, y: 0 }}
+                     transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+                     className="absolute top-20 left-0 w-[240px] sm:w-[355px] bg-white rounded-[22px] sm:rounded-[24px] p-3 sm:p-3.5 shadow-[0_16px_36px_rgba(0,0,0,0.14)] border border-white/70 z-10"
+                   >
+                     {/* Image with Tag */}
+                     <div className="relative w-full aspect-[700/400] rounded-[14px] overflow-hidden bg-gray-100">
+                       <Image
+                         src="/assets/images/courses/course-2.png"
+                         alt="Build Digital Asset Mockup"
+                         fill
+                         sizes="265px"
+                         className="object-cover"
+                       />
+                    
+                     </div>
+                     {/* Content */}
+                     <div className="mt-2.5">
+                       <h4 className="font-poppins font-bold text-xs sm:text-[13px] text-gray-950 truncate">
+                         Build Digital Asset
+                       </h4>
+                       <p className="text-[10px] text-gray-400 font-poppins mt-0.5">
+                         by <span className="text-[#003be2]">purepearl studio</span>
+                       </p>
+                       <div className="mt-2 flex items-center justify-between">
+                         <span className="bg-[#f4f5f6] text-gray-700 text-[10px] font-medium px-2 py-0.5 rounded-full flex items-center gap-1 font-poppins">
+                           <BarChart2 className="w-2.5 h-2.5 text-gray-500" />
+                           Beginner
+                         </span>
+                         <div className="flex items-center -space-x-1.5">
+                           {studentAvatars.slice(0, 3).map((avatar, idx) => (
+                             <div
+                               key={idx}
+                               className="relative w-4 h-4 rounded-full overflow-hidden border border-white"
+                             >
+                               <Image src={avatar} alt="Student" fill className="object-cover" />
+                             </div>
+                           ))}
+                           <div className="w-4 h-4 rounded-full bg-black text-white text-[7px] font-bold flex items-center justify-center border border-white">
+                             26+
+                           </div>
+                         </div>
+                       </div>
+                       <div className="mt-2 pt-1 border-t border-gray-100 flex items-baseline gap-0.5 font-poppins">
+                         <span className="text-xs font-bold text-[#003be2]">$25</span>
+                         <span className="text-[9px] text-gray-400">/lifetime</span>
+                       </div>
+                     </div>
+                   </motion.div>
+       
+                   {/* 5. Front Card: "the Power of Big Data" */}
+                   <motion.div
+                     initial={{ opacity: 0, y: 25 }}
+                     animate={{ opacity: 1, y: 0 }}
+                     transition={{ duration: 0.7, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
+                     className="absolute top-2 left-20 sm:left-24 w-[280px] sm:w-[320px] bg-white rounded-[24px] sm:rounded-[26px] p-3.5 sm:p-4 shadow-[0_22px_50px_rgba(0,0,0,0.22)] border border-white/80 z-20"
+                   >
+                     {/* Image with 3 Overlay Badges */}
+                     <div className="relative w-full aspect-[700/400] rounded-[16px] overflow-hidden bg-gray-900">
+                       <Image
+                         src="/assets/images/courses/course-3.png"
+                         alt="the Power of Big Data"
+                         fill
+                         sizes="320px"
+                         className="object-cover"
+                       />
+                       <div className="absolute bottom-2 left-2 flex items-center gap-1.5 flex-wrap">
+                         <span className="px-2 py-0.5 rounded-full bg-black/60 backdrop-blur-md text-white font-satoshi text-[9px]">
+                           17 Lessons
+                         </span>
+                         <span className="px-2 py-0.5 rounded-full bg-black/60 backdrop-blur-md text-white font-satoshi text-[9px]">
+                           2 hours 16 mins
+                         </span>
+                         <span className="px-2 py-0.5 rounded-full bg-black/60 backdrop-blur-md text-white font-satoshi text-[9px]">
+                           59 Comments
+                         </span>
+                       </div>
+                     </div>
+       
+                     {/* Course Info */}
+                     <div className="mt-3">
+                       <div className="flex items-center justify-between gap-2">
+                         <h4 className="font-poppins font-bold text-sm sm:text-base text-gray-950 truncate">
+                           the Power of Big Data
+                         </h4>
+                         <div className="flex items-center gap-1 shrink-0">
+                           <span className="text-xs font-semibold text-gray-800 font-poppins">
+                             4.5
+                           </span>
+                           <Star className="w-3 h-3 text-[#d4fb20] fill-[#d4fb20]" />
+                         </div>
+                       </div>
+       
+                       <p className="text-[11px] text-gray-400 font-poppins mt-0.5">
+                         by <span className="text-[#003be2]">purepearl studio</span>
+                       </p>
+       
+                       {/* Tags & Avatars */}
+                       <div className="mt-2.5 flex items-center justify-between">
+                         <span className="bg-[#f4f5f6] text-gray-700 text-[11px] font-medium px-2.5 py-0.5 rounded-full flex items-center gap-1 font-poppins">
+                           <BarChart2 className="w-3 h-3 text-gray-500" />
+                           Beginner
+                         </span>
+       
+                         <div className="flex items-center -space-x-2">
+                           {studentAvatars.map((avatar, idx) => (
+                             <div
+                               key={idx}
+                               className="relative w-5 h-5 rounded-full overflow-hidden border-2 border-white shadow-xs"
+                             >
+                               <Image src={avatar} alt="Student" fill className="object-cover" />
+                             </div>
+                           ))}
+                           <div className="w-5 h-5 rounded-full bg-black text-white text-[8px] font-bold flex items-center justify-center border-2 border-white shadow-xs">
+                             26+
+                           </div>
+                         </div>
+                       </div>
+       
+                       {/* Price */}
+                       <div className="mt-2.5 pt-1.5 border-t border-gray-100 flex items-baseline gap-0.5 font-poppins">
+                         <span className="text-base font-extrabold text-[#003be2]">$25</span>
+                         <span className="text-xs text-gray-400 font-normal">/lifetime</span>
+                       </div>
+                     </div>
+                   </motion.div>
+       
+                   {/* 6. Happy Students Badge (Bottom Right, Lime Background) */}
+                   <motion.div
+                     initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                     animate={{ opacity: 1, scale: 1, y: 0 }}
+                     transition={{ duration: 0.6, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                     className="absolute -bottom-4 right-0 sm:right-2 bg-[#d4fb20] rounded-[22px] sm:rounded-[24px] px-4 py-3 sm:py-3.5 shadow-xl z-25 min-w-[195px] sm:min-w-[215px]"
+                   >
+                     <h5 className="font-poppins font-bold text-xs sm:text-[13px] text-gray-950">
+                       Happy Students
+                     </h5>
+                     <div className="flex items-center gap-1 mt-0.5 mb-2">
+                       <span className="text-[11px] font-bold text-gray-900 font-poppins">
+                         4.5
+                       </span>
+                       <span className="text-[10px] text-gray-700 font-poppins">
+                         (240)
+                       </span>
+                       <Star className="w-3 h-3 text-[#003be2] fill-[#003be2] ml-0.5" />
+                     </div>
+       
+                     {/* Avatar Stack */}
+                     <div className="flex items-center -space-x-1.5">
+                       {happyStudentList.slice(0, 4).map((avatar, idx) => (
+                         <div
+                           key={idx}
+                           className="relative w-5 h-5 sm:w-6 sm:h-6 rounded-full overflow-hidden border-[1.5px] border-white shadow-xs"
+                         >
+                           <Image src={avatar} alt="Happy student" fill className="object-cover" />
+                         </div>
+                       ))}
+                       <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-black text-white text-[8px] font-bold flex items-center justify-center border-[1.5px] border-white shadow-xs">
+                         2K+
+                       </div>
+                     </div>
+                   </motion.div>
+                 </div>
         </div>
 
         {/* ========================================================================= */}
