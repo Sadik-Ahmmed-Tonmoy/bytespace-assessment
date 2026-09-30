@@ -70,7 +70,14 @@ export const DiscoverSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              className="font-poppins font-semibold text-3xl sm:text-4xl lg:text-[44px] leading-[1.2] tracking-[-0.01em] text-gray-950"
+              className="font-poppins font-semibold text-3xl sm:text-4xl lg:text-[44px] leading-[120%] tracking-[-0.01em] text-gray-950"
+              style={{
+                fontFamily: "var(--font-poppins), 'Poppins', sans-serif",
+                fontWeight: 600,
+                fontSize: "44px",
+                lineHeight: "120%",
+                letterSpacing: "-1%",
+              }}
             >
               Discover What Our Community Is Saying
             </motion.h2>
@@ -83,7 +90,14 @@ export const DiscoverSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="max-w-[560px] font-satoshi font-normal text-base sm:text-lg leading-[1.6] tracking-normal text-[#525866]"
+              className="max-w-[560px] font-satoshi font-normal text-base sm:text-lg lg:text-[18px] leading-[160%] tracking-[0%] text-[#525866]"
+              style={{
+                fontFamily: "Satoshi, sans-serif",
+                fontWeight: 400,
+                fontSize: "18px",
+                lineHeight: "160%",
+                letterSpacing: "0%",
+              }}
             >
               At ByteSpace, our vibrant community of learners and creators is at the heart of what we do. Hear directly from those who have experienced the transformative journey of learning and creating on our platform. Explore testimonials that reflect the diverse perspectives of enthusiastic learners and accomplished creators.
             </motion.p>

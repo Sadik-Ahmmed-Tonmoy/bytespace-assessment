@@ -77,13 +77,31 @@ export const Footer: React.FC = () => {
                   className="w-full h-full object-contain"
                 />
               </div>
-              <span className="text-xl sm:text-2xl font-bold tracking-tight text-gray-950 font-poppins">
+              <span
+                className="font-clash font-bold text-[24px] leading-none tracking-normal text-gray-950 select-none"
+                style={{
+                  fontFamily: "var(--font-clash-display), 'Clash Display', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "24px",
+                  lineHeight: "100%",
+                  letterSpacing: "0%",
+                }}
+              >
                 ByteSpace
               </span>
             </Link>
 
             {/* Newsletter Tagline */}
-            <p className="font-satoshi font-normal text-[15px] sm:text-base leading-[1.6] text-[#525866] mt-5 sm:mt-6 mb-6 sm:mb-7">
+            <p
+              className="font-satoshi font-normal text-[14px] leading-[160%] tracking-[0%] text-[#525866] mt-5 sm:mt-6 mb-6 sm:mb-7"
+              style={{
+                fontFamily: "Satoshi, sans-serif",
+                fontWeight: 400,
+                fontSize: "14px",
+                lineHeight: "160%",
+                letterSpacing: "0%",
+              }}
+            >
               Stay Up to date with our latest features and releases by joining our newsletter.
             </p>
 
@@ -109,7 +127,16 @@ export const Footer: React.FC = () => {
             </form>
 
             {/* Disclaimer */}
-            <p className="font-satoshi font-normal text-xs sm:text-[13px] leading-[1.5] text-[#667085] mt-3.5">
+            <p
+              className="font-satoshi font-normal text-[12px] leading-[160%] tracking-[0%] text-[#667085] mt-3.5"
+              style={{
+                fontFamily: "Satoshi, sans-serif",
+                fontWeight: 400,
+                fontSize: "12px",
+                lineHeight: "160%",
+                letterSpacing: "0%",
+              }}
+            >
               By subscribing, you agree to our Privacy Policy and consent to receive updates from our company.
             </p>
           </div>
@@ -122,7 +149,14 @@ export const Footer: React.FC = () => {
                 <li key={item.label}>
                   <Link
                     href={item.href}
-                    className="font-satoshi font-normal text-[15px] sm:text-[16px] leading-[1.5] text-[#344054] hover:text-[#003be2] transition-colors duration-200 inline-block focus:outline-none focus-visible:ring-2 focus-visible:ring-[#003be2] rounded"
+                    className="font-satoshi font-normal text-[14px] leading-[160%] tracking-[0%] text-[#344054] hover:text-[#003be2] transition-colors duration-200 inline-block focus:outline-none focus-visible:ring-2 focus-visible:ring-[#003be2] rounded"
+                    style={{
+                      fontFamily: "Satoshi, sans-serif",
+                      fontWeight: 400,
+                      fontSize: "14px",
+                      lineHeight: "160%",
+                      letterSpacing: "0%",
+                    }}
                   >
                     {item.label}
                   </Link>
@@ -136,7 +170,14 @@ export const Footer: React.FC = () => {
                 <li key={item.label}>
                   <Link
                     href={item.href}
-                    className="font-satoshi font-normal text-[15px] sm:text-[16px] leading-[1.5] text-[#344054] hover:text-[#003be2] transition-colors duration-200 inline-block focus:outline-none focus-visible:ring-2 focus-visible:ring-[#003be2] rounded"
+                    className="font-satoshi font-normal text-[14px] leading-[160%] tracking-[0%] text-[#344054] hover:text-[#003be2] transition-colors duration-200 inline-block focus:outline-none focus-visible:ring-2 focus-visible:ring-[#003be2] rounded"
+                    style={{
+                      fontFamily: "Satoshi, sans-serif",
+                      fontWeight: 400,
+                      fontSize: "14px",
+                      lineHeight: "160%",
+                      letterSpacing: "0%",
+                    }}
                   >
                     {item.label}
                   </Link>
@@ -150,7 +191,14 @@ export const Footer: React.FC = () => {
                 <li key={item.label}>
                   <Link
                     href={item.href}
-                    className="font-satoshi font-normal text-[15px] sm:text-[16px] leading-[1.5] text-[#344054] hover:text-[#003be2] transition-colors duration-200 inline-block focus:outline-none focus-visible:ring-2 focus-visible:ring-[#003be2] rounded"
+                    className="font-satoshi font-normal text-[14px] leading-[160%] tracking-[0%] text-[#344054] hover:text-[#003be2] transition-colors duration-200 inline-block focus:outline-none focus-visible:ring-2 focus-visible:ring-[#003be2] rounded"
+                    style={{
+                      fontFamily: "Satoshi, sans-serif",
+                      fontWeight: 400,
+                      fontSize: "14px",
+                      lineHeight: "160%",
+                      letterSpacing: "0%",
+                    }}
                   >
                     {item.label}
                   </Link>
@@ -169,14 +217,32 @@ export const Footer: React.FC = () => {
         {/* Bottom Sub-footer */}
         {/* ========================================================================= */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-[14px] text-[#667085] font-satoshi">
-          <p>@ 2023 ByteSpace. All rights reserved.</p>
+          <p
+            className="font-satoshi font-normal text-[12px] leading-[160%] tracking-[0%] text-[#667085]"
+            style={{
+              fontFamily: "Satoshi, sans-serif",
+              fontWeight: 400,
+              fontSize: "12px",
+              lineHeight: "160%",
+              letterSpacing: "0%",
+            }}
+          >
+            @ 2023 ByteSpace. All rights reserved.
+          </p>
 
           <div className="flex items-center gap-5 sm:gap-7 flex-wrap justify-center">
             {legalLinks.map((link) => (
               <Link
                 key={link.label}
                 href={link.href}
-                className="hover:text-gray-950 transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-900 rounded"
+                className="font-satoshi font-normal text-[12px] leading-[160%] tracking-[0%] text-[#667085] hover:text-gray-950 transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-900 rounded"
+                style={{
+                  fontFamily: "Satoshi, sans-serif",
+                  fontWeight: 400,
+                  fontSize: "12px",
+                  lineHeight: "160%",
+                  letterSpacing: "0%",
+                }}
               >
                 {link.label}
               </Link>

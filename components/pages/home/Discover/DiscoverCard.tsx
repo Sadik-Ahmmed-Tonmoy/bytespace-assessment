@@ -47,16 +47,43 @@ export const DiscoverCard: React.FC<DiscoverCardProps> = ({
 
         {/* User Info */}
         <div className="space-y-1">
-          <h3 className="font-poppins font-semibold text-[20px] leading-[1.2] tracking-[-0.01em] text-gray-950">
+          <h3
+            className="font-poppins font-semibold text-[20px] leading-[120%] tracking-[-0.01em] text-gray-950"
+            style={{
+              fontFamily: "var(--font-poppins), 'Poppins', sans-serif",
+              fontWeight: 600,
+              fontSize: "20px",
+              lineHeight: "120%",
+              letterSpacing: "-1%",
+            }}
+          >
             {testimonial.name}
           </h3>
-          <p className="font-satoshi font-normal text-[18px] leading-[1.6] tracking-normal text-[#003be2]">
+          <p
+            className="font-satoshi font-normal text-[18px] leading-[160%] tracking-[0%] text-[#003be2]"
+            style={{
+              fontFamily: "Satoshi, sans-serif",
+              fontWeight: 400,
+              fontSize: "18px",
+              lineHeight: "160%",
+              letterSpacing: "0%",
+            }}
+          >
             {testimonial.role}
           </p>
         </div>
 
         {/* Testimonial Quote */}
-        <p className="font-satoshi font-normal text-[18px] leading-[1.6] tracking-normal text-[#525866] mt-6 sm:mt-7">
+        <p
+          className="font-satoshi font-normal text-[18px] leading-[160%] tracking-[0%] text-[#525866] mt-6 sm:mt-7"
+          style={{
+            fontFamily: "Satoshi, sans-serif",
+            fontWeight: 400,
+            fontSize: "18px",
+            lineHeight: "160%",
+            letterSpacing: "0%",
+          }}
+        >
           &ldquo;{testimonial.content}&rdquo;
         </p>
       </div>
