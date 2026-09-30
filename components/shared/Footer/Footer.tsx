@@ -65,7 +65,7 @@ export const Footer: React.FC = () => {
             {/* Brand Logo */}
             <Link
               href="/"
-              className="inline-flex items-center gap-2.5 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#d4fb20] rounded-lg"
+              className="inline-flex items-end gap-2.5 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#d4fb20] rounded-lg"
               aria-label="ByteSpace Home"
             >
               <div className="relative w-7 h-7 sm:w-8 sm:h-8 flex-shrink-0 transition-transform duration-300 group-hover:scale-105">
